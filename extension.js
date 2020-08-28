@@ -15,13 +15,13 @@ function activate(context) {
 	console.log('Congratulations, your extension "endlesscoding" is now active!');
 
 	let startGame = vscode.commands.registerCommand('endlesscoding.startgame', function () {
-		// The code you place here will be executed every time your command is executed
-
-		// Display a message box to the user
 		console.info('endlesscoding, Game Start!')
 	});
-
 	context.subscriptions.push(startGame);
+	let endGame = vscode.commands.registerCommand('endlesscoding.endgame', function () {
+		console.info('endlesscoding, Game End!')
+	});
+	context.subscriptions.push(endGame);
 }
 exports.activate = activate;
 
